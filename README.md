@@ -14,6 +14,9 @@ This project is a part/excerpt from
 
 	https://github.com/moljac/avro/tree/master-based-dotnet-standard
 	
+	https://issues.apache.org/jira/browse/AVRO-2112
+	
+	
 ## TODOs
 
 *	lover netstandard version support to enable reach (more platforms)
