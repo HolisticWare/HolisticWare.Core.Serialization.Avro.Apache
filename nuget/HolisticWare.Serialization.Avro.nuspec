@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+nuget push output/HolisticWare.Avro.*.nupkg -Source https://api.nuget.org/v3/index.json
+-->
+<package >
+  <metadata>
+    <id> 
+      HolisticWare.Serialization.Avro
+    </id>
+    <title>
+      Apache Avro data serialization system for .NET Standard 2.0
+    </title>
+    <version>
+      1.8.2
+    </version>
+    <authors>
+      moljac HolisticWare / Xamarin
+    </authors>
+    <owners>
+      moljac HolisticWare
+    </owners>
+    <requireLicenseAcceptance>
+      false
+    </requireLicenseAcceptance>
+    <description>
+      Avro port to .NET Standard 2.0
+    </description>
+    <copyright>
+      Copyright 2017
+    </copyright>
+    <iconUrl>
+      https://github.com/moljac/HolisticWare.Branding/raw/master/pngs/holisticware/component/HolisticWare.svg.512x512.png
+    </iconUrl>
+    <projectUrl>
+      https://github.com/moljac/avro
+    </projectUrl>
+    <licenseUrl>
+      https://github.com/moljac/avro/blob/master/LICENSE.txt
+    </licenseUrl>
+    <dependencies>
+        <dependency id="Newtonsoft.Json" version="[10.0.3,)"/>
+        <dependency id="System.CodeDom" version="[4.4.0,)" />
+        <!--
+        -->
+    </dependencies>
+  </metadata>
+  <files>
+    <file 
+      src="output/Avro.Main.dll" 
+      target="lib/netstandard20" 
+    >
+    </file>
+    <file 
+      src="output/Avro.CodeGen.dll" 
+      target="lib/netstandard20" 
+    >
+    </file>
+    <file 
+      src="output/Avro.IPC.dll" 
+      target="lib/netstandard20" 
+    >
+    </file>
+    <file 
+      src="output/Avro.MsBuild.dll" 
+      target="lib/netstandard20" 
+    >
+    </file>
+  </files>
+</package>
