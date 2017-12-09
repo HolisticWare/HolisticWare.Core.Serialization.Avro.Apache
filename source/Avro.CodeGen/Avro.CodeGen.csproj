@@ -1,13 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project 
+    Sdk="Microsoft.NET.Sdk"
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+    >
+
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\..\..\Avro.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Avro.Main\Avro.Main.csproj" />
