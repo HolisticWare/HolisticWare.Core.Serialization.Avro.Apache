@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\packages\Microsoft.NET.Test.Sdk.15.5.0\build\net45\Microsoft.Net.Test.Sdk.props" Condition="Exists('..\..\..\packages\Microsoft.NET.Test.Sdk.15.5.0\build\net45\Microsoft.Net.Test.Sdk.props')" />
+  <Import Project="..\..\..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\..\..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6C461AC0-8C0F-4538-9256-454F752DD821}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Avro.Test</RootNamespace>
+    <AssemblyName>Avro.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Microsoft.VisualStudio.CodeCoverage.Shim">
+      <HintPath>..\..\..\packages\Microsoft.CodeCoverage.1.0.3\lib\netstandard1.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="..\..\..\..\..\share\test\schemas\mail.avpr">
+      <Link>Ipc\mail.avpr</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CodGen\" />
+    <Folder Include="File\" />
+    <Folder Include="Generic\" />
+    <Folder Include="IO\" />
+    <Folder Include="Ipc\" />
+    <Folder Include="Properties\" />
+    <Folder Include="Protocol\" />
+    <Folder Include="Schema\" />
+    <Folder Include="Specific\" />
+    <Folder Include="Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodGen\CodeGenTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="File\FileTests.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Generic\GenericTests.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="IO\BinaryCodecTests.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\All.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\AllCallback.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\AllEnum.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\AllTestRecord.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\AllTestRecordPartial.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\FixedTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\Kind.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\Mail.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\MailCallback.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\MD5.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\Message.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\Simple.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\SimpleCallback.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\TestError.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\TestRecord.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\TestRecordExtensions.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\GeneratedFiles\org\apache\avro\test\TestRecordWithUnion.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\HttpClientServerTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\LocalTransceiverTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\MailResponder.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\SerializationTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\SocketServerConcurrentExecutionTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\SocketServerTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\SocketServerWithCallbacksTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Ipc\SocketTransceiverWhenServerStopsTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Properties\AssemblyInfo.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Protocol\ProtocolTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Schema\AliasTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Schema\SchemaNormalizationTests.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Schema\SchemaTests.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Specific\SpecificTests.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Utils\CaseFinder.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="Utils\CaseFinderTests.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\..\packages\Microsoft.NET.Test.Sdk.15.5.0\build\net45\Microsoft.Net.Test.Sdk.targets" Condition="Exists('..\..\..\packages\Microsoft.NET.Test.Sdk.15.5.0\build\net45\Microsoft.Net.Test.Sdk.targets')" />
+</Project>
