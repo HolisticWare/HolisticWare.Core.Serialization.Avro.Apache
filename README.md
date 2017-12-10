@@ -1,6 +1,6 @@
-# HolisticWare.Serialization.Avro
+# HolisticWare.Core.Serialization.Avro.Apache
 
-HolisticWare.Serialization.Avro is port of Apache Avro serialization library.
+HolisticWare.Core.Serialization.Avro.Apache is port of Apache Avro serialization library.
 
 This project is a part/excerpt from
 
