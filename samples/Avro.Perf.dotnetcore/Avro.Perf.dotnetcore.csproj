@@ -11,4 +11,18 @@
     <ProjectReference Include="..\..\source\Avro.IPC\Avro.IPC.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Net.NameResolution" Version="4.3.0" />
+    <PackageReference Include="System.CodeDom" Version="4.4.0" />
+  </ItemGroup>
+  <UsingTask 
+    AssemblyFile="..\..\source\Avro.MsBuild\bin\$(Configuration)\netstandard2.0\Avro.msbuild.dll" 
+    TaskName="Avro.msbuild.AvroBuildTask" 
+    />
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="echo HolisticWare Avro Schema Build Tasks" />
+    <AvroBuildTask OutDir="ipc\" SchemaFiles="schema.avsc;">
+    </AvroBuildTask>
+  </Target>
+
 </Project>

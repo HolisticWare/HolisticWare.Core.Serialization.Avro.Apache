@@ -51,30 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Avro.Perf.dotnetcore\com\foo\A.cs">
-      <Link>com\foo\A.cs</Link>
-    </Compile>
-    <Compile Include="..\Avro.Perf.dotnetcore\com\foo\Complex.cs">
-      <Link>com\foo\Complex.cs</Link>
-    </Compile>
-    <Compile Include="..\Avro.Perf.dotnetcore\com\foo\MyEnum.cs">
-      <Link>com\foo\MyEnum.cs</Link>
-    </Compile>
-    <Compile Include="..\Avro.Perf.dotnetcore\com\foo\MyFixed.cs">
-      <Link>com\foo\MyFixed.cs</Link>
-    </Compile>
-    <Compile Include="..\Avro.Perf.dotnetcore\com\foo\Narrow.cs">
-      <Link>com\foo\Narrow.cs</Link>
-    </Compile>
-    <Compile Include="..\Avro.Perf.dotnetcore\com\foo\newRec.cs">
-      <Link>com\foo\newRec.cs</Link>
-    </Compile>
-    <Compile Include="..\Avro.Perf.dotnetcore\com\foo\Simple.cs">
-      <Link>com\foo\Simple.cs</Link>
-    </Compile>
-    <Compile Include="..\Avro.Perf.dotnetcore\com\foo\Wide.cs">
-      <Link>com\foo\Wide.cs</Link>
-    </Compile>
     <Compile Include="..\Avro.Perf.dotnetcore\PerfTest.cs">
       <Link>PerfTest.cs</Link>
     </Compile>

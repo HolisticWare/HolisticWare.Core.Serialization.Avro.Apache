@@ -22,6 +22,7 @@ using System.Text;
 using Avro.Generic;
 using Avro.IO;
 using Avro.Specific;
+
 using com.foo;
 
 namespace Avro.perf
