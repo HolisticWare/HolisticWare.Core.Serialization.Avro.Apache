@@ -1,0 +1,23 @@
+﻿<!-- 
+    build/AvroSchemaCompileTasks.props 
+
+    use TreatAsLocalProperty if common names like TaskFolder are used. 
+    It isolates this file settings from the rest of the project’s settings.
+-->
+<Project TreatAsLocalProperty="TaskFolder;TaskAssembly">
+
+  <PropertyGroup>
+    <TaskFolder Condition=" '$(MSBuildRuntimeType)' == 'Core' ">netstandard2.0</TaskFolder>
+    <TaskFolder Condition=" '$(MSBuildRuntimeType)' != 'Core' ">net46</TaskFolder>
+    <TaskAssembly>$(MSBuildThisFileDirectory)..\bin\$(Configuration)\netstandard2.0\Avro.msbuild.dll</TaskAssembly>
+  </PropertyGroup>
+
+  <UsingTask 
+    TaskName="Avro.msbuild.AvroBuildTask" 
+    AssemblyFile="$(TaskAssembly)" 
+    />
+  <UsingTask 
+    TaskName="Avro.msbuild.AvroBuildExternalTask" 
+    AssemblyFile="$(TaskAssembly)" 
+    />
+</Project>

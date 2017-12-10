@@ -1,0 +1,68 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <!--
+        MacOSX has not net461
+    <TargetFramework>netstandard2.0;net461</TargetFramework>
+        -->
+    <RootNamespace>Avro.msbuild</RootNamespace>
+    <AssemblyName>Avro.msbuild</AssemblyName>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.DS_Store</DefaultItemExcludes>
+        
+    <!-- 
+        Suppresses the warnings about the package not having assemblies in lib/*/.dll.
+    -->
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <!-- 
+        Change the default location where NuGet will put the build output 
+    -->
+    <BuildOutputTargetFolder>Avro.tasks</BuildOutputTargetFolder>
+        
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Condition="Exists('..\Avro.Main\Avro.Main.csproj')" Include="..\Avro.Main\Avro.Main.csproj" />
+    <!--
+    <PackageReference 
+        Condition="! Exists('..\Avro.Main\Avro.Main.csproj')" Include="HolisticWare.Serialization.Avro" Version="1.8.2" />
+    -->
+  </ItemGroup>
+    
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="15.5.180" />
+    <PackageReference Include="System.CodeDom" Version="4.4.0" />
+    <!-- 
+        marks all packages as 'local only' so they don't end up in the nuspec 
+
+        set PrivateAssets="All" on the PackageReferences. 
+
+        Otherwise, these will be added to nuget package’s list of dependencies. 
+        These packages 
+
+            *   are not required when task is installed; 
+            *   only used when the project is compiled
+
+    dotnet pack Avro.MsBuild.dotnetcore.csproj -o ./nupkg -c Release    
+    -->
+    <PackageReference Update="@(PackageReference)" PrivateAssets="All" />
+  </ItemGroup>
+      
+  <ItemGroup>
+    <Folder Include="build\" />
+    <Folder Include="buildMultiTargeting\" />
+  </ItemGroup>
+    
+  <ItemGroup>
+    <Content Include="build\AvroSchemaCompileTasks.props" PackagePath="build\" />
+    <Content Include="buildMultiTargeting\AvroSchemaCompileTasks.props" PackagePath="buildMultiTargeting\" />
+  </ItemGroup>
+  <PropertyGroup>
+        
+    <!-- 
+        forces SDK to copy dependencies into build output to make packing easier 
+    -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+    
+</Project>

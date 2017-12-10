@@ -1,0 +1,10 @@
+﻿<!-- 
+    buildMultiTargeting/AvroSchemaCompileTasks.props 
+
+    To avoid duplicating content
+        buildMultiTargeting/AvroSchemaCompileTasks.props 
+    only needs to contain an Import.
+-->
+<Project>
+  <Import Project="..\build\AvroSchemaCompileTasks.props" />
+</Project>
