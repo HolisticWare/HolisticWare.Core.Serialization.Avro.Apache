@@ -1,6 +1,6 @@
-# HolisticWare.Core.Serialization.Avro.Apache
+# HolisticWare.Serialization.Avro
 
-HolisticWare.Core.Serialization.Avro.Apache is port of Apache Avro serialization library.
+HolisticWare.Serialization.Avro is port of Apache Avro serialization library.
 
 This project is a part/excerpt from
 
@@ -22,4 +22,17 @@ This project is a part/excerpt from
 *	lover netstandard version support to enable reach (more platforms)
 
 	Currently netstandard20 is supported. investigation needed to determine
+
+
+
+## Microsoft.hadoop.Avro
+
+
+*	https://code.msdn.microsoft.com/windowsdesktop/Avro-Serialization-fb34069c
+
+*	https://code.msdn.microsoft.com/Schema-Evolution-In-Avro-240f0a7a
+
+*	https://code.msdn.microsoft.com/windowsdesktop/Generic-XML-to-Avro-86ef9fa8
+
+*	https://code.msdn.microsoft.com/windowsapps/Using-Avro-to-upload-data-ae81b1e3
 
